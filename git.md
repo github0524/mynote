@@ -30,7 +30,7 @@ git push origin master -f
 
 ### 显示哪些纳入版本
 
-git ls-files
+git ls-files（中文显示不了）
 
 ### qt5
 
