@@ -1,4 +1,4 @@
-### git 
+## git 
 
 [(120条消息) 20 个最常用的 Git 命令_git常用命令_万物不及香香的博客-CSDN博客](https://blog.csdn.net/qq_53113396/article/details/124983800?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1-124983800-blog-45847439.235^v36^pc_relevant_anti_vip_base&spm=1001.2101.3001.4242.2&utm_relevant_index=4)
 
@@ -6,13 +6,13 @@ git init //把本文件夹设置成git文件夹
 
 git clone github上的url
 
-#### 更新服务器分支上的内容到本地
+### 更新服务器分支上的内容到本地
 
 ```python
 git pull origin master
 ```
 
-#### 更新本地文件到服务器
+### 更新本地文件到服务器
 
 注意几个概念：工作区-----暂存区（本地）----远程仓库
 
@@ -46,9 +46,11 @@ git commit -m ""
 
 git push origin master
 
-方法二：直接使用commit 提交
+**方法二：直接使用commit 提交**（推荐）
 
-git commit  <file>  -m "your comment"
+**git commit  <file>  -m "your comment"**
+
+**git push origin master**
 
 方法三：这种会短暂消失一写忽略的修改，不建议
 
@@ -118,25 +120,3 @@ Copy Codegit commit --amend -m "Fixed the issue with the new feature"
 ```
 Copy Codegit commit -S -m "Merge branch with master"
 ```
-
-
-
-
-
-
-
-### qt5
-
-5.12之后的版本都不提供离线下载，可以先下载一个在线下载器
-
-需要账号密码是最少三种的
-
-[QT 5.15 最新安装指南（针对不同系统）_qt5.15_Home_8181的博客-CSDN博客](https://blog.csdn.net/qq_43125185/article/details/117426594)
-
-
-
-### 多媒体播放器的解码器qplayer
-
-[Releases · Nevcairiel/LAVFilters (github.com)](https://github.com/Nevcairiel/LAVFilters/releases)
-
-如果不好用可以用另一个
