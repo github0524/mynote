@@ -120,3 +120,13 @@ Copy Codegit commit --amend -m "Fixed the issue with the new feature"
 ```
 Copy Codegit commit -S -m "Merge branch with master"
 ```
+
+
+
+
+
+## svn
+
+svn update
+
+当前文件夹是空的，服务器上，文件下下面的两个文件下有东西，直接进入该目录 update即可，不需要其他参数选项
