@@ -38,6 +38,12 @@ git commit -a -m "update" ： 能提交修改过，但是没有添加到缓存�
 
 git push origin master -f
 
+## 修改文件名
+
+git mv 旧文件 新文件
+
+
+
 ### 提交部分代码
 
 方法一：git add 提交的文件和文件夹（tab键可提示）
@@ -124,9 +130,3 @@ Copy Codegit commit -S -m "Merge branch with master"
 
 
 
-
-## svn
-
-svn update
-
-当前文件夹是空的，服务器上，文件下下面的两个文件下有东西，直接进入该目录 update即可，不需要其他参数选项

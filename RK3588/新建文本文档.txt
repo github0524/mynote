@@ -1,0 +1,3 @@
+i2c命令
+v4l2命令
+media-ctl命令
