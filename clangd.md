@@ -1,5 +1,7 @@
 clangd
 
+https://youtrack.jetbrains.com/articles/CPP-A-90276519/Clang-Tidy-in-CLion-2021.3-default-configuration
+
 ## 关闭部分检查
 
 这是检查的项目
