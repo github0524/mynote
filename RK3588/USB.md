@@ -57,3 +57,17 @@ CONFIG_USB_ETH_EEM is not set
 3.ifconfig usb0 192.168.0.74
 
 电脑打开适配器
+
+
+
+
+
+## USB控制器和PHY
+
+![image-20230621180357479](C:\Users\scl\AppData\Roaming\Typora\typora-user-images\image-20230621180357479.png)
+
+
+
+
+
+![image-20230621181832628](C:\Users\scl\AppData\Roaming\Typora\typora-user-images\image-20230621181832628.png)
