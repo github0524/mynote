@@ -37,7 +37,13 @@ grep '' /sys/class/video4linux/video*/name
 相机截图单张
 /oem/bin/rk_mpi_vi_test -w 2688 -h 1520 -n /dev/video8 -m 0 -o 1 -l 1
 
-[root@RK3588:/]# grep '' /sys/class/video4linux/video*/name
+
+
+## 检查设备上Camera清单
+
+v4l2-ctl --list-devices
+
+[root@RK3588:/]# grep  ' '  /sys/class/video4linux/video*/name
 /sys/class/video4linux/video0/name:stream_cif_mipi_id0
 /sys/class/video4linux/video1/name:stream_cif_mipi_id1
 /sys/class/video4linux/video10/name:rkisp_fbcpath
@@ -55,3 +61,18 @@ grep '' /sys/class/video4linux/video*/name
 /sys/class/video4linux/video7/name:rkcif_scale_ch3
 /sys/class/video4linux/video8/name:rkisp_mainpath
 /sys/class/video4linux/video9/name:rkisp_selfpath
+
+## v4l2-ctl
+
+部分，前面还有
+
+查看usb摄像头可用的分辨率
+
+查看输出格式和分辨率
+
+```cpp
+v4l2-ctl --device=/dev/video4 --list-formats-ext
+```
+
+
+

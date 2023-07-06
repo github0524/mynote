@@ -1,5 +1,20 @@
 Concept
 
+## 格式
+
+raw rgb yuv
+
+Raw RGB 每个像素只有一种颜色（R、G、B中的一种）；
+RGB 每个像素都有三种颜色，每一个的值在0~255之间；
+在手机摄像头的测试过程中，由sensor输出的数据就是Raw data（Raw RGB），经过彩色插值就变成RGB
+
+也不一定就是测试过程，想要获得真正的图像，都必须有的一个过程；
+sensor输出的数据格式，主要分两种：YUV（比较流行），RGB，这就是sonsor的数据输出；这其中的GRB就是Raw RGB，是sensor的bayer阵列获取的数据（每种传感器获得对应的颜色亮度）；
+
+软件的处理过程当中，为了获得更好的图像质量，还需要白平衡，gamma校正，彩色校正
+
+![image-20230706193647676](image/Concept.assets/image-20230706193647676.png)
+
 ## VI模块的概念
 
 DEV设备

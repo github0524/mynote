@@ -1,0 +1,5 @@
+i2c命令
+v4l2命令
+media-ctl命令
+
+RK_mpp 里面包含对v4l2-ctl命令的使用

@@ -1,0 +1,16 @@
+运行aiq之前设置，能够打开aiq的log
+export persist_camera_engine_log=0x1ff1
+运行aiq
+/usr/bin/rkaiq_3A_server&\r\n
+设置rkaiq_tool_server
+/userdata/tuning/rkaiq_tool_server-aarch64-20230116_092812 -s /dev/video11 -n 20&\r\n
+-s 	指定设备不知道踩不到图
+-n	要想抓raw这里必须设置
+-r 	1打开rtsp功能，默认0
+-f: 	配置离线帧功能的发送帧率, 默认值为10帧
+-w/-h:	配置RTSP视频流预览输出分辨率，该分辨率会基于ISP输出尺寸进行缩放以满足要求，默认值为
+	1920/1080
+/oem/bin/rtsp_test  -w 1920 -h 1080 --src_rate=50 -n /dev/video11&\r\n
+
+
+HDMI会对出图有影响

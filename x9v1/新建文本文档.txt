@@ -1,0 +1,7 @@
+现在板子里面有一个imx415的json
+
+tool_server也可以设置一个iq文件
+
+windows上面也可以设置一个
+
+那么是不是应该把imx的放过来试试

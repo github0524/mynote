@@ -21,6 +21,22 @@ tuner x86上使用
 
 ![image-20230628110647824](image/RKISP.assets/image-20230628110647824-1688023907978-7.png)
 
+## tuner工具的用法
+
+1.构建新的sensor文件用于tuner调试
+
+![image-20230706153153536](image/RKISP.assets/image-20230706153153536.png)
+
+2.从板子读出一份配置
+
+![image-20230706153417282](image/RKISP.assets/image-20230706153417282.png)
+
+3.导出到sensor list，这样调试的
+
+### 抓取的raw图色彩显示
+
+![image-20230706175324739](image/RKISP.assets/image-20230706175324739.png)
+
 
 
 ## 在线抓取YUV图

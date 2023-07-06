@@ -38,6 +38,13 @@ git commit -a -m "update" ： 能提交修改过，但是没有添加到缓存�
 
 git push origin master -f
 
+## 取消http，https代理
+
+//取消http代理
+git config --global --unset http.proxy
+//取消https代理 
+git config --global --unset https.proxy
+
 ## 修改文件名
 
 git mv 旧文件 新文件
@@ -126,7 +133,6 @@ Copy Codegit commit --amend -m "Fixed the issue with the new feature"
 ```
 Copy Codegit commit -S -m "Merge branch with master"
 ```
-
 
 
 
