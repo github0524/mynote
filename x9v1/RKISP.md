@@ -10,7 +10,7 @@ tuner x86上使用
 
 ![image-20230629152719695](image/RKISP.assets/image-20230629152719695-1688023892530-4.png)
 
-## 运行参数
+## tool运行参数
 
 -s  /dev/video8
 
@@ -43,9 +43,68 @@ tuner x86上使用
 
 ![image-20230627182835317](image/RKISP.assets/image-20230627182835317.png)
 
+## rkaiq_3A_server(aiq)
+
+### 开启rkaiq的log
+
+> 由 [韦 敦（福州）](https://redmine.rock-chips.com/users/3021) 更新于 [大约一小时](https://redmine.rock-chips.com/projects/fae/activity?from=2023-07-05) 之前
+>
+> 建议贴一下运行rkaiq_3A_sever 的log看看。
+> 可以将aiq 的log先打开，再跑，log会多一些
+>
+> 先打开一个终端
+> export persist_camera_engine_log=0x1ff1
+> 然后跑rkaiq_3A_server
+
+
+
+## iqfiles
+
+以下基于NVR V1.6 中的aiq
+
+rk3588 支持 RKISP30
+
+iq文件放置于/etc
+
+json文件命名
+
+sc430ai_sc430ai_IR.json
+
+![image-20230705160024084](image/RKISP.assets/image-20230705160024084.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## 编译rkaiq
+
+**NVR目录下面有这个文件叫rkaiq_3A_server**
 
 camera_engine_rkaiq 
 
@@ -87,6 +146,9 @@ export AIQ_BUILD_HOST_DIR=/home/songchuanlong/svn/AIOT/buildroot/output/rockchip
 
 ![image-20230629153230808](image/RKISP.assets/image-20230629153230808.png)
 
+## readelf
 
+应该用交叉编译的readelf
 
 ![image-20230630180708900](image/RKISP.assets/image-20230630180708900.png)
+

@@ -1,18 +1,6 @@
 gdb
 
-## core文件
 
-gdb ./可执行文件 ./core文件
-
-如果gdb是交叉编译，gdb也要使用交叉编译版本
-
-
-
-进入后
-
-info threads 
-
-bt 调用栈
 
 
 
@@ -357,3 +345,60 @@ select-frame 栈帧号
 如要查看所有的gdb命令，可以在gdb下键入两次Tab(制表符)，运行“help command”可以查看命令command的详细使用格式。
 
 ### 
+
+
+
+## core文件
+
+gdb ./可执行文件 ./core文件
+
+如果gdb是交叉编译，gdb也要使用交叉编译版本
+
+
+
+进入后
+
+info threads 
+
+bt 调用栈
+
+一、Linux生成core文件
+当进程异常时如段错误退出时会产生core文件，当进程执行某处代码阻塞时，可以强制生成core文件。
+
+1.1 core文件生成大小限制
+ulimit -c，可查看生成core文件的大小，0表示未开启，unlimited表示无限制。
+ulimit -c filesize，限制生成core文件的大小，ulimit -c 0表示不开启，ulimit -c 1000表示限制core文件限制为1000KB，ulimit -c unlimited无限制。
+1.2 core文件生成路径
+默认路径为当前命令的执行路径，以下命令可查看：
+cat /proc/sys/kernel/core_pattern
+/sbin/sysctl kernel.core_pattern
+
+临时修改：修改/proc/sys/kernel/core_pattern文件，echo "/corefile/core" > /proc/sys/kernel/core_pattern可以将core文件统一生成到/corefile目录下。
+永久修改：使用sysctl -w name=value命令，/sbin/sysctl -w kernel.core_pattern=/corefile/core。
+有的机器或docker使用/corefile/core或默认路径无法保存core文件（可能是权限问题？），这时候可以使用系统中已经存在的目录作为core文件生成路径，如/tmp/core。
+1.3 core文件生成文件名
+默认文件名为core，以下命令可查看：
+cat /proc/sys/kernel/core_pattern
+/sbin/sysctl kernel.core_pattern
+临时修改：修改/proc/sys/kernel/core_pattern文件，echo "core-%p-%e" > /proc/sys/kernel/core_pattern生成core文件名为core-pid-程序文件名
+永久修改：使用sysctl -w name=value命令，/sbin/sysctl -w kernel.core_pattern=core-%p-%e
+%p - insert pid into filename 添加pid
+%u - insert current uid into filename 添加当前uid 
+%g - insert current gid into filename 添加当前gid
+%s - insert signal that caused the coredump into the filename 添加导致产生core的信号 
+%t - insert UNIX time that the coredump occurred into filename 添加core文件生成时的unix时间(由1970年1月1日计起的秒数)
+%h - insert hostname where the coredump happened into filename 添加主机名
+%e - insert coredumping executable name into filename 添加命令名（程序文件名）
+
+1.4 程序崩溃没有core文件
+可能是当前执行的命令没有权限改动core_pattern下指定的目录：
+
+$ cat /proc/sys/kernel/core_pattern
+core-%e-%p-%t
+#或
+/corefile/core-%e-%p-%t
+可以试试修改core_pattern目录为：
+
+echo "/tmp/core-%e-%p-%t" > /proc/sys/kernel/core_pattern
+————————————————
+原文链接：https://blog.csdn.net/qq_42570601/article/details/114842320

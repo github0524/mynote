@@ -54,9 +54,27 @@ CONFIG_USB_ETH_EEM is not set
 
 ![image-20230616100803324](image/USB.assets/image-20230616100803324.png)
 
-3.ifconfig usb0 192.168.0.74
+3.
 
-电脑打开适配器
+启动脚本设置
+
+/bin/busybox 要支持这些命令
+
+直接busybox查看
+
+
+
+![image-20230704175428912](image/USB.assets/image-20230704175428912.png)
+
+ifconfig usb0 192.168.0.74
+
+电脑打开适配器设置同一网段
+
+确定板子已经在后台跑起来之后
+
+这里连不上就**不要填写用户名**，直接ip连接
+
+![image-20230704175503543](image/USB.assets/image-20230704175503543.png)
 
 
 
